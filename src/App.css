@@ -1,20 +1,7 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.site-logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.site-logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap');
 
 body{
   background-color: #0a1045;
+  color: #7FAFEF;
+  font-family: 'Libre Franklin', sans-serif;
 }

@@ -7,13 +7,13 @@ const HelloCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-    }, 2000); // Change message every 2 seconds
+    }, 2000); // Changing message every 2 seconds
 
     return () => clearInterval(interval);
   }, [messages.length]);
 
   return (
-    <div>
+    <div className="hello-carousel">
       <p>{messages[currentMessageIndex]}</p>
     </div>
   );

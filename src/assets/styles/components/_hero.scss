@@ -1,0 +1,54 @@
+@import '../abstracts/variables';
+
+
+.hero {
+    padding: 2rem;
+
+
+    .introduction {
+
+        .hello-carousel {
+            color: $accent-color;
+            font-size: clamp(1rem, 4.65vw, 1.5rem);
+
+            p {
+                margin: .5rem;
+            }
+        }
+
+        h1 {
+            text-shadow: 2px 2px 5px #000;
+            margin: 0.5rem;
+            font-size: clamp(3rem, 15vw, 5rem);
+        }
+
+        .designation {
+            color: $text-color;
+            font-size: clamp(1.25rem, 7.5vw, 2rem);
+            margin: 1rem 0.5rem;
+        }
+
+
+    }
+
+    .call-to-action {
+        padding: 0.5rem 2rem;
+        background-color: $primary-color;
+        color: $background-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        gap: 0.25rem;
+        margin: 3rem auto;
+
+        .down-arrow {
+            height: 1.25rem;
+            width: 1.25rem;
+
+            path {
+                fill: $background-color;
+            }
+        }
+    }
+}
