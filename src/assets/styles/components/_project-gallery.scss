@@ -1,0 +1,21 @@
+@import '../abstracts/variables';
+
+#project-gallery {
+
+    width: 100%;
+
+    h2 {
+        color: $accent-color;
+        font-size: $font-size-section-headings;
+        margin: 1rem auto;
+        width: max-content;
+    }
+
+    .project-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        flex-direction: row;
+    }
+}

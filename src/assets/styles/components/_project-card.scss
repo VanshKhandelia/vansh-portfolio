@@ -1,0 +1,83 @@
+@import "../abstracts/variables";
+
+.project-card {
+    max-width: 25rem;
+    background: linear-gradient(to bottom, rgba($text-color, 0.1), rgba($background-color, 0.1));
+    box-shadow: 0 4px 4px 0 black;
+    padding: 1rem;
+    margin: 0 1rem;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .project-card-title {
+        font-size: clamp(1rem, 4.6vw, 1.5rem);
+        margin: 0.25rem auto;
+        width: max-content;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 0.5rem;
+
+        .short-description {
+            grid-row: 1/2;
+            grid-column: 2/4;
+            font-size: clamp(0.75rem, 3vw, 1rem);
+            margin: 0.5rem;
+        }
+
+        .skills {
+            grid-row: 2/3;
+            grid-column: 1/4;
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            justify-content: flex-start;
+            align-items: center;
+
+            li {
+                display: inline;
+                padding: 0.25rem 0.5rem;
+                background-color: $primary-color;
+                color: $background-color;
+                font-size: clamp(0.75rem, 3vw, 1rem);
+                height: max-content;
+                border-radius: 10px;
+            }
+        }
+
+        .project-card-image {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            width: 100%;
+        }
+    }
+
+    .view-project-button {
+        align-self: self-end;
+        display: block;
+        width: max-content;
+        margin: 0.5rem 0;
+        padding: 0.25rem 0.5rem;
+        color: $text-color;
+        background-color: rgba($primary-color, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        p {
+            margin: 0;
+            font-size: clamp(0.75rem, 3vw, 1rem);
+        }
+    }
+
+
+}
