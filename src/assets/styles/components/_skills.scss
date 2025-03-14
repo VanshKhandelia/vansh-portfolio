@@ -1,0 +1,64 @@
+@import "../abstracts/variables";
+
+.skills-section {
+
+    padding: 1rem;
+
+    .section-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .section-heading {
+        font-size: $font-size-section-headings;
+        color: $accent-color;
+        width: max-content;
+        margin: 1rem auto;
+    }
+
+    .Buttons {
+        flex: 1 1 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+
+        button {
+            color: $text-color;
+            background-color: rgba($primary-color, 0.25);
+            border-radius: 0px;
+            font-size: clamp(1rem, 3vw, 1rem);
+            width: 100%;
+        }
+
+
+        .active {
+            background-color: rgba($accent-color, 0.25);
+        }
+    }
+
+    .skill-list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        background-color: rgba($primary-color, 0.1);
+        padding: 1rem;
+        margin: 1rem;
+
+        li {
+            flex: 1 1 auto;
+            padding: 0.25rem 0.5rem;
+            background-color: $primary-color;
+            color: $background-color;
+            border-radius: 10px;
+            min-width: 2rem;
+            text-align: center;
+            font-size: clamp(0.5rem, 2.8vw, 1rem);
+        }
+
+    }
+
+}

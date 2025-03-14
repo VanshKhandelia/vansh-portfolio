@@ -1,0 +1,63 @@
+@import '../abstracts/variables';
+
+.section-about {
+
+    padding: 1rem;
+
+    .section-heading {
+        font-size: $font-size-section-headings;
+        color: $accent-color;
+        width: max-content;
+        margin: 1rem auto;
+    }
+
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+
+
+        img {
+            display: block;
+            box-sizing: border-box;
+            width: 75%;
+            margin: 1rem auto;
+        }
+
+        .about-accordian {
+            border-radius: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            background-color: rgba($primary-color, 0.25);
+            padding: 1rem;
+            gap: 1rem;
+
+            .accordion-button {
+                width: 100%;
+                background-color: $background-color;
+                color: $primary-color;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                border-radius: 0rem;
+            }
+
+            .accordion-content {
+                width: 100%;
+                background-color: $background-color;
+                max-height: 0rem;
+                overflow: hidden;
+                box-sizing: border-box;
+                color: $text-color;
+            }
+
+            .accordion-content.active {
+                padding: 1rem;
+                max-height: 15rem;
+                overflow: scroll;
+            }
+        }
+
+
+    }
+}

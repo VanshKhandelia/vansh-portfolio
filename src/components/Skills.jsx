@@ -47,31 +47,35 @@ const Skills = () => {
   };
 
   return (
-    <div>
-      <h2 className="section-heading">Skills</h2>
-      <div className="Buttons">
-        <button
-          className={activeCategory === "all" ? "active" : ""}
-          onClick={() => filterSkills("all")}
-        >
-          All
-        </button>
-        {restDataSkillCategories.map((category) => (
+    <section className="skills-section">
+      <h2 className="section-heading">SKILLS</h2>
+      <div className="section-content">
+        <div className="Buttons">
           <button
-            key={category.id}
-            className={activeCategory === category.id ? "active" : ""}
-            onClick={() => filterSkills(category.id)}
+            className={activeCategory === "all" ? "active" : ""}
+            onClick={() => filterSkills("all")}
           >
-            {category.name}
+            All
           </button>
-        ))}
+          {restDataSkillCategories.map((category) => (
+            <button
+              key={category.id}
+              className={activeCategory === category.id ? "active" : ""}
+              onClick={() => filterSkills(category.id)}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+        <ul className="skill-list">
+          {filteredSkills.map((skill) => (
+            <li key={skill.id}>
+              <strong>{skill.title.rendered}</strong>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="list-disc pl-5">
-        {filteredSkills.map((skill) => (
-          <li key={skill.id}>{skill.title.rendered}</li>
-        ))}
-      </ul>
-    </div>
+    </section>
   );
 };
 
