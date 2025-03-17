@@ -6,7 +6,7 @@ import Loading from "./Loading";
 import { restBase } from "./Utilities";
 import { useState, useEffect } from "react";
 
-const ACFImage = ({ acfImageID }) => {
+const ACFImage = ({ acfImageID, imageSize }) => {
   const restPath = restBase + `media/${acfImageID}`;
   const [acfImageObject, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
@@ -28,7 +28,18 @@ const ACFImage = ({ acfImageID }) => {
   return (
     <>
       {isLoaded ? (
-        <img src={acfImageObject.source_url} alt={acfImageObject.alt_text} />
+        <figure>
+          {imageSize ? (
+            <img
+              src={acfImageObject.media_details.sizes[imageSize]?.source_url}
+            />
+          ) : (
+            <img
+              src={acfImageObject.source_url}
+              alt={acfImageObject.alt_text}
+            />
+          )}
+        </figure>
       ) : (
         <Loading />
       )}

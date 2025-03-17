@@ -5,6 +5,7 @@ import ProjectGallery from "../components/ProjectGallery";
 import Contact from "../components/Contact";
 import Navigation from "../components/Navigation";
 import Skills from "../components/Skills";
+import HikePost from "../components/hikePost";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <ProjectGallery />
       <Skills />
       <About />
+      <HikePost />
       <Contact />
     </div>
   );

@@ -1,0 +1,59 @@
+@import "../abstracts/variables";
+
+.hike-post {
+
+    padding: 1rem;
+
+    .section-heading {
+        font-size: $font-size-section-headings;
+        color: $accent-color;
+        width: max-content;
+        margin: 1rem auto;
+    }
+
+    .hike-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+
+        figure {
+
+            width: 100%;
+            margin: 0;
+            height: max-content;
+
+            img {
+                display: block;
+                // box-sizing: border-box;
+                width: 100%;
+                max-width: 17rem;
+                margin: 0 auto;
+
+            }
+        }
+
+        .content {
+            box-sizing: border-box;
+            width: 100%;
+            background-color: rgba($primary-color, 0.1);
+            padding: 0.5rem;
+            color: $text-color;
+            border-radius: 10px;
+
+            .post-title {
+                width: max-content;
+                margin: 0.5rem auto;
+                max-width: 100%;
+                text-align: center;
+
+
+            }
+
+            p {
+                margin: 0;
+                font-size: 0.5 rem;
+            }
+        }
+    }
+}

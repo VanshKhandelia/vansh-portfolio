@@ -56,12 +56,17 @@ const About = () => {
             <ACFImage
               className="about-image"
               acfImageID={restData.acf.about_image}
+              // imageSize={"medium"}
             />
             <div className="about-accordian">
               {questions.map((question, index) => (
                 <div key={index} className="accordion-item">
                   <button
-                    className="accordion-button"
+                    className={
+                      activeIndex == index
+                        ? "accordion-button active"
+                        : "accordion-button"
+                    }
                     onClick={() => toggleAccordion(index)}
                   >
                     {question}

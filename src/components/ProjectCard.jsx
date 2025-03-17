@@ -45,7 +45,7 @@ const ProjectCard = ({ projectId }) => {
                 ))}
             </ul>
           </div>
-          <a href="#" className="view-project-button">
+          <a className="view-project-button">
             <p>Project Details</p>
             <FaArrowRight />
           </a>
