@@ -3,6 +3,8 @@
 .section-about {
 
     padding: 1rem;
+    max-width: 75rem;
+    margin: 0 auto;
 
     .section-heading {
         font-size: $font-size-section-headings;
@@ -17,14 +19,14 @@
         justify-content: center;
         align-content: center;
         gap: 2rem;
+        padding: 1rem;
+
 
         figure {
-
-            width: 75%;
+            margin: 0;
 
             img {
                 display: block;
-                // box-sizing: border-box;
                 width: 100%;
                 max-width: 17rem;
                 margin: 0 auto;
@@ -32,49 +34,86 @@
             }
         }
 
+        @media (min-width: $media-query-tablet) {
+            justify-content: space-between;
 
-        .about-accordian {
-            border-radius: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            background-color: rgba($primary-color, 0.25);
-            padding: 1rem;
-            gap: 1rem;
-            max-width: 25rem;
-            justify-content: space-evenly;
+            figure {
+                img {
+                    max-width: 20rem;
+                }
 
-
-            .accordion-button {
-                width: 100%;
-                background-color: $primary-color;
-                color: $background-color;
-                text-align: left;
-                display: flex;
-                justify-content: space-between;
-                border-radius: 0rem;
+                order: 2;
             }
+        }
 
-            .accordion-content {
-                width: 100%;
-                background-color: $background-color;
-                max-height: 0rem;
-                overflow: hidden;
-                box-sizing: border-box;
-                color: $text-color;
-                transition: all 0.3s ease;
 
-                p {
-                    font-size: 0.75rem;
+        .accordion-background {
+            background-color: rgba($primary-color, 0.1);
+            padding: 1rem;
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+
+            .about-accordian {
+                flex-direction: column;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                height: max-content;
+
+
+                .accordion-button {
+                    width: 100%;
+                    background-color: $background-color;
+                    color: $primary-color;
+                    text-align: left;
+                    border-radius: 0;
+
+                    strong {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+
+                .accordion-button:hover,
+                .accordion-button.active {
+                    background-color: $primary-color;
+                    color: $background-color;
+                    border: none;
+                }
+
+
+                .accordion-content {
+                    width: 100%;
+                    background-color: $background-color;
+                    max-height: 0rem;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    color: $text-color;
+                    transition: all 0.3s ease;
+                }
+
+                .accordion-content.active {
+                    padding: 1rem;
+                    max-height: 15rem;
+                    overflow: scroll;
+                }
+
+                .accordion-item:not(:last-child) {
+                    border-bottom: 1px solid $primary-color;
                 }
             }
 
-            .accordion-content.active {
-                padding: 1rem;
-                max-height: 15rem;
-                overflow: scroll;
+            @media (min-width: $media-query-tablet) {
+                width: 30%;
+                order: 1;
+
+                .accordion-button {
+                    padding: 2rem;
+                }
             }
         }
+
 
 
     }

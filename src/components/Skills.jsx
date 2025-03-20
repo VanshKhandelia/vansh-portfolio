@@ -47,7 +47,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="skills-section">
+    <section className="skills-section nav-bar-element" id="skills">
       <h2 className="section-heading">SKILLS</h2>
       <div className="section-content">
         <div className="Buttons">
@@ -67,13 +67,15 @@ const Skills = () => {
             </button>
           ))}
         </div>
-        <ul className="skill-list">
-          {filteredSkills.map((skill) => (
-            <li key={skill.id}>
-              <strong>{skill.title.rendered}</strong>
-            </li>
-          ))}
-        </ul>
+        <div className="skills-background">
+          <ul className="skill-list">
+            {filteredSkills.map((skill) => (
+              <li key={skill.id}>
+                <strong>{skill.title.rendered}</strong>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

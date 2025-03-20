@@ -17,8 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/project/:projectID" element={<ProjectPage />} />
         </Routes>
-        <Navigation />
       </main>
+      <Navigation />
     </>
   );
 }

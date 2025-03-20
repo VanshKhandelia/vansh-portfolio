@@ -1,1 +1,24 @@
 @import 'abstracts/variables';
+
+p,
+a,
+li {
+    font-size: $font-size-mobile-p;
+
+    @media (min-width: $media-query-tablet) {
+        font-size: $font-size-tablet-p;
+    }
+
+    @media (min-width: $media-query-desktop) {
+        font-size: $font-size-desktop-p;
+    }
+}
+
+main {
+    width: 100vw;
+
+    @media (min-width: $media-query-desktop) {
+        margin-left: 5rem;
+        max-width: calc(100vw - 5rem);
+    }
+}

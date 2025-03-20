@@ -3,10 +3,20 @@
 .skills-section {
 
     padding: 1rem;
+    max-width: 75rem;
+    margin: 0 auto;
 
     .section-content {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+
+        @media (min-width: $media-query-tablet) {
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+        }
     }
 
     .section-heading {
@@ -24,39 +34,66 @@
         align-items: center;
         justify-content: center;
         margin: 1rem;
+        height: max-content;
+
+
+        @media (min-width: $media-query-tablet) {
+            max-width: 15.625rem;
+        }
 
         button {
             color: $text-color;
             background-color: rgba($primary-color, 0.25);
             border-radius: 0px;
-            font-size: clamp(1rem, 3vw, 1rem);
             width: 100%;
+            border: none;
         }
-
 
         .active {
             background-color: rgba($accent-color, 0.25);
+            border: none;
+        }
+
+        button:hover,
+        button:active {
+            background-color: $primary-color;
+            color: $background-color;
+            border: none;
         }
     }
 
-    .skill-list {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        background-color: rgba($primary-color, 0.1);
-        padding: 1rem;
-        margin: 1rem;
 
-        li {
+    .skills-background {
+        @media (min-width: $media-query-tablet) {
             flex: 1 1 auto;
-            padding: 0.25rem 0.5rem;
-            background-color: $primary-color;
-            color: $background-color;
-            border-radius: 10px;
-            min-width: 2rem;
-            text-align: center;
-            font-size: clamp(0.5rem, 2.8vw, 1rem);
+        }
+
+        margin: 1rem;
+        background-color: rgba($primary-color, 0.1);
+        width: 100%;
+        max-width: 56.25rem;
+
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            align-items: flex-start;
+            margin: 0;
+
+
+            li {
+                flex: 1 1 auto;
+                padding: 0.25rem 0.5rem;
+                background-color: $primary-color;
+                color: $background-color;
+                border-radius: 10px;
+                min-width: 2rem;
+                text-align: center;
+            }
         }
 
     }

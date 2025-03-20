@@ -7,7 +7,17 @@
     left: 0;
     right: 0;
 
+
+    @media (min-width: $media-query-desktop) {
+        right: auto;
+        margin-left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        height: fit-content;
+    }
+
     ul {
+        background: linear-gradient(0deg, rgba($text-color, 0.1) 0%, $background-color 89%);
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -18,6 +28,7 @@
 
         a {
             color: $text-color;
+            padding: 0.5rem;
             display: flex;
             flex-direction: column;
             width: max-content;
@@ -31,6 +42,29 @@
 
         li {
             display: inline;
+            border-radius: 5px;
         }
+
+        li.active {
+            background-color: $primary-color;
+
+            a {
+                color: $background-color;
+            }
+        }
+
+        @media (min-width: $media-query-tablet) {
+            max-width: fit-content;
+            gap: 2rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: $media-query-desktop) {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+
+        }
+
     }
 }

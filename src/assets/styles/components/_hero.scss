@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-
+    width: 100%;
 
     .introduction {
 
@@ -48,5 +48,13 @@
         gap: 0.25rem;
         margin: 3rem auto;
         border-radius: 10px;
+
+        @media (min-width:$media-query-tablet) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .call-to-action:hover {
+        background-color: $accent-color;
     }
 }

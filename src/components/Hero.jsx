@@ -24,7 +24,7 @@ const Hero = () => {
     fetchData();
   }, [restPath]);
   return (
-    <div className="hero">
+    <section className="hero nav-bar-element" id="home">
       <div className="introduction">
         <HelloCarousel />
         <h1>{restData.acf?.name}</h1>
@@ -34,7 +34,7 @@ const Hero = () => {
         <strong>View My Work</strong>
         <FaArrowDown />
       </a>
-    </div>
+    </section>
   );
 };
 

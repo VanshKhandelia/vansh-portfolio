@@ -29,9 +29,9 @@ const Contact = () => {
   }, [restPath]);
 
   return (
-    <>
+    <section className="contact-section nav-bar-element" id="contact">
       {isLoaded ? (
-        <section className="contact-section">
+        <>
           <h2 className="section-heading">Contact</h2>
           <div className="contact-message">
             <p>{restData.acf.contact_text}</p>
@@ -62,11 +62,11 @@ const Contact = () => {
               <FaInstagramSquare />
             </a>
           </div>
-        </section>
+        </>
       ) : (
         <Loading />
       )}
-    </>
+    </section>
   );
 };
 

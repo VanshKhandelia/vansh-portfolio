@@ -5,4 +5,14 @@ $background-color: #0A1045;
 $text-color: #F2F4FF;
 
 
-$font-size-section-headings: clamp(1.5rem, 3vw, 3rem);
+$font-size-section-headings: clamp(1.5rem, 4.5vw, 2.75rem);
+$font-size-mobile-p: 0.65rem;
+$font-size-tablet-p: 0.75rem;
+$font-size-desktop-p: 1rem;
+
+
+
+
+$media-query-tablet: 40em;
+$media-query-desktop: 60em;
+$media-query-desktop-lg: 121rem;

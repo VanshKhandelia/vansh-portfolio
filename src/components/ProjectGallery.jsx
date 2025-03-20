@@ -26,20 +26,20 @@ const ProjectGallery = () => {
   }, [restPath]);
 
   return (
-    <>
+    <section className="nav-bar-element" id="project-gallery">
       {isLoaded ? (
-        <div id="project-gallery">
+        <>
           <h2 className="section-title">PROJECTS</h2>
           <div className="project-cards">
             {restData.map((project) => (
               <ProjectCard key={project.id} projectId={project.id} />
             ))}
           </div>
-        </div>
+        </>
       ) : (
         <Loading />
       )}
-    </>
+    </section>
   );
 };
 

@@ -32,11 +32,17 @@ const ACFImage = ({ acfImageID, imageSize }) => {
           {imageSize ? (
             <img
               src={acfImageObject.media_details.sizes[imageSize]?.source_url}
+              alt={acfImageObject.alt_text}
             />
           ) : (
             <img
               src={acfImageObject.source_url}
               alt={acfImageObject.alt_text}
+              srcSet={`
+                ${acfImageObject.media_details.sizes.medium.source_url} 225w,
+                ${acfImageObject.media_details.sizes.medium_large.source_url} 768w,
+            `}
+              sizes="(max-width: 40em) 225w, 768w"
             />
           )}
         </figure>

@@ -9,14 +9,14 @@ import HikePost from "../components/hikePost";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Hero />
       <ProjectGallery />
       <Skills />
       <About />
       <HikePost />
       <Contact />
-    </div>
+    </>
   );
 };
 

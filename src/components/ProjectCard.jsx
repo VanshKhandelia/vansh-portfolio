@@ -45,7 +45,7 @@ const ProjectCard = ({ projectId }) => {
                 ))}
             </ul>
           </div>
-          <a className="view-project-button">
+          <a href={`/project/${projectId}`} className="view-project-button">
             <p>Project Details</p>
             <FaArrowRight />
           </a>

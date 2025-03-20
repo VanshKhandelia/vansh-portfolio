@@ -5,7 +5,6 @@ import { restBase } from "../utilities/Utilities";
 import ACFImage from "../utilities/ACFImages";
 import Loading from "../utilities/Loading";
 import { FaAngleDown } from "react-icons/fa";
-
 const About = () => {
   const restPath = restBase + "pages/7";
   const [restData, setData] = useState([]);
@@ -14,7 +13,10 @@ const About = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(restPath);
+      const response = await fetch(
+        `${restPath}?timestamp=${new Date().getTime()}`
+      );
+      // const response = await fetch(restPath);
       if (response.ok) {
         const data = await response.json();
         setData(data);
@@ -47,46 +49,49 @@ const About = () => {
     : [];
 
   return (
-    <>
+    <section className="section-about nav-bar-element" id="about">
       {isLoaded ? (
-        <section className="section-about">
+        <>
           <h2 className="section-heading">ABOUT ME</h2>
           <div className="about-content">
             {console.log(restData.acf.about_image)}
             <ACFImage
               className="about-image"
               acfImageID={restData.acf.about_image}
-              // imageSize={"medium"}
             />
-            <div className="about-accordian">
-              {questions.map((question, index) => (
-                <div key={index} className="accordion-item">
-                  <button
-                    className={
-                      activeIndex == index
-                        ? "accordion-button active"
-                        : "accordion-button"
-                    }
-                    onClick={() => toggleAccordion(index)}
-                  >
-                    {question}
-                    <FaAngleDown className="arrow" />
-                  </button>
-                  <div
-                    className={`accordion-content ${
-                      activeIndex === index ? "active" : ""
-                    }`}
-                    dangerouslySetInnerHTML={{ __html: answers[index] }}
-                  ></div>
-                </div>
-              ))}
+            <div className="accordion-background">
+              <div className="about-accordian">
+                {questions.map((question, index) => (
+                  <div key={index} className="accordion-item">
+                    <button
+                      className={
+                        activeIndex == index
+                          ? "accordion-button active"
+                          : "accordion-button"
+                      }
+                      onClick={() => toggleAccordion(index)}
+                    >
+                      <strong>
+                        {question}
+                        <FaAngleDown className="arrow" />
+                      </strong>
+                    </button>
+                    <div
+                      className={`accordion-content ${
+                        activeIndex === index ? "active" : ""
+                      }`}
+                      dangerouslySetInnerHTML={{ __html: answers[index] }}
+                    ></div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
+        </>
       ) : (
         <Loading />
       )}
-    </>
+    </section>
   );
 };
 

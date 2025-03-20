@@ -1,18 +1,18 @@
 @import "../abstracts/variables";
 
 .project-card {
-    max-width: 25rem;
+    max-width: 18.75rem;
     background: linear-gradient(to bottom, rgba($text-color, 0.1), rgba($background-color, 0.1));
     box-shadow: 0 4px 4px 0 black;
     padding: 1rem;
-    margin: 0 1rem;
+    margin: 1rem;
     color: $text-color;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     .project-card-title {
-        font-size: clamp(1rem, 4.6vw, 1.5rem);
+        font-size: clamp(1rem, 4vw, 1.25rem);
         margin: 0.25rem auto;
         width: max-content;
     }
@@ -26,7 +26,6 @@
         .short-description {
             grid-row: 1/2;
             grid-column: 2/4;
-            font-size: clamp(0.65rem, 3vw, 1rem);
             margin: 0.5rem;
         }
 
@@ -47,7 +46,6 @@
                 padding: 0.25rem 0.5rem;
                 background-color: $primary-color;
                 color: $background-color;
-                font-size: clamp(0.65rem, 3vw, 1rem);
                 height: max-content;
                 border-radius: 10px;
             }
@@ -75,8 +73,20 @@
 
         p {
             margin: 0;
-            font-size: clamp(0.75rem, 3vw, 1rem);
         }
+    }
+
+    .view-project-button:hover {
+        background-color: $primary-color;
+        color: $background-color;
+    }
+
+    @media (min-width: $media-query-tablet) {
+        max-width: 40%;
+    }
+
+    @media (min-width: $media-query-desktop) {
+        max-width: 25rem;
     }
 
 
