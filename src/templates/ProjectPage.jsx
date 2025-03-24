@@ -6,6 +6,8 @@ import Loading from "../utilities/Loading";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 import "../assets/styles/templates/_project-page.scss";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const ProjectPage = () => {
   const { projectID } = useParams();
@@ -38,40 +40,62 @@ const ProjectPage = () => {
       {isLoaded ? (
         <div className="project-page">
           <h1 className="project-title">{restData.title.rendered}</h1>
-          <div className="icons">
-            <a
-              href={restData.acf.project_github_link.url}
-              aria-label={restData.acf.project_github_link.title}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href={restData.acf.project_live_link.url}
-              aria-label={restData.acf.project_live_link.title}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaExternalLinkAlt />
-            </a>
+          <div className="upper-section">
+            <section className="carousel-section">
+              <h2 className="project-section-heading">Project Images</h2>
+              <Carousel
+                showThumbs={false}
+                autoPlay
+                infiniteLoop
+                interval={3000}
+                showStatus={false}
+              >
+                {restData._embedded["acf:attachment"].map((image, index) => (
+                  <div key={index}>
+                    <img src={image.source_url} alt={image.alt_text} />
+                  </div>
+                ))}
+              </Carousel>
+            </section>
+            <div className="right-section">
+              <div className="icons">
+                <a
+                  href={restData.acf.project_github_link.url}
+                  aria-label={restData.acf.project_github_link.title}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href={restData.acf.project_live_link.url}
+                  aria-label={restData.acf.project_live_link.title}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaExternalLinkAlt />
+                </a>
+              </div>
+              <section className="overview">
+                <h2 className="project-section-heading">Project Overview</h2>
+                <p className="section-content">
+                  {restData.acf.project_overview}
+                </p>
+              </section>
+              <section className="skills">
+                <h2 className="project-section-heading">
+                  Skills/Technologies Used
+                </h2>
+                <ul>
+                  {restData._embedded["wp:term"][0].map((skill, index) => (
+                    <li key={index}>
+                      <strong>{skill.name}</strong>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
           </div>
-          <section className="skills">
-            <h2 className="project-section-heading">
-              Skills/Technologies Used
-            </h2>
-            <ul>
-              {restData._embedded["wp:term"][0].map((skill, index) => (
-                <li key={index}>
-                  <strong>{skill.name}</strong>
-                </li>
-              ))}
-            </ul>
-          </section>
-          <section className="overview">
-            <h2 className="project-section-heading">Project Overview</h2>
-            <p className="section-content">{restData.acf.project_overview}</p>
-          </section>
           <section className="highlights">
             <h2 className="project-section-heading">Project Highlights</h2>
             <div

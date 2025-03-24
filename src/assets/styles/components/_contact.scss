@@ -13,6 +13,8 @@
 
     .contact-message {
         color: $text-color;
+        max-width: max-content;
+        margin: 0 auto;
     }
 
     .contact-links {
@@ -20,6 +22,7 @@
         justify-content: space-evenly;
         width: 75%;
         margin: 0 auto;
+        max-width: 25rem;
 
 
         a {

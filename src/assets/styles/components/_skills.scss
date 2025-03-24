@@ -64,9 +64,6 @@
 
 
     .skills-background {
-        @media (min-width: $media-query-tablet) {
-            flex: 1 1 auto;
-        }
 
         margin: 1rem;
         background-color: rgba($primary-color, 0.1);
@@ -94,6 +91,10 @@
                 min-width: 2rem;
                 text-align: center;
             }
+        }
+
+        @media (min-width: $media-query-tablet) {
+            flex: 1 1 auto;
         }
 
     }

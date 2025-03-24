@@ -7,8 +7,6 @@ import Navigation from "./components/Navigation";
 import ProjectPage from "./templates/ProjectPage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Header />

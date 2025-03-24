@@ -19,6 +19,7 @@ main {
 
     @media (min-width: $media-query-desktop) {
         margin-left: 5rem;
-        max-width: calc(100vw - 5rem);
+        max-width: calc(100vw - 6rem);
+        overflow-x: hidden;
     }
 }
