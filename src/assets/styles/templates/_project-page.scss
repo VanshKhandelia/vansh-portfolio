@@ -7,6 +7,11 @@
     margin: 0 auto;
     margin-bottom: 3.5rem;
 
+    p,
+    li {
+        font-size: 1rem;
+    }
+
     .project-title {
         font-size: clamp(1.5rem, 4.5vw, 3rem);
         color: $accent-color;
@@ -34,13 +39,14 @@
     .carousel-section {
         width: clamp(12.5rem, 100%, 25rem);
         margin: 0 auto;
+        height: 100%;
 
         .project-section-heading {
             display: none;
         }
 
         .carousel .slide img {
-            height: clamp(12.5rem, 35vh, 18.75rem);
+            height: clamp(12.5rem, 50vh, 18.75rem);
             object-fit: cover;
             width: 100%;
         }
@@ -62,6 +68,22 @@
 
         a:hover {
             color: $accent-color;
+        }
+    }
+
+    .coming-soon {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        padding: 1rem;
+        width: clamp(0rem, 90%, 25rem);
+        margin: 0 auto;
+        padding: 0rem 0.5rem;
+        color: $accent-color;
+
+        p {
+            //font-weight: 1000;
+            margin: 0.25rem;
         }
     }
 
@@ -164,6 +186,14 @@
                     margin: 0;
                     padding: 0;
 
+                }
+
+                .coming-soon {
+                    justify-content: flex-start;
+                    order: 2;
+                    padding-bottom: 0;
+                    margin: 0;
+                    padding: 0;
                 }
 
                 .skills {

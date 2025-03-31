@@ -27,12 +27,16 @@
     }
 
     .Buttons {
+        h3 {
+            color: $text-color;
+            margin: 0;
+        }
+
         flex: 1 1 auto;
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
         align-items: center;
-        justify-content: center;
         margin: 1rem;
         height: max-content;
 
@@ -47,6 +51,11 @@
             border-radius: 0px;
             width: 100%;
             border: none;
+
+            p {
+                font-size: 1rem;
+                margin: 0;
+            }
         }
 
         .active {

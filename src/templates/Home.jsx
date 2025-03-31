@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import Navigation from "../components/Navigation";
 import Skills from "../components/Skills";
 import HikePost from "../components/hikePost";
+import { useEffect } from "react";
 
 const Home = () => {
   return (

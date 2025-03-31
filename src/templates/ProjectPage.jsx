@@ -58,24 +58,31 @@ const ProjectPage = () => {
               </Carousel>
             </section>
             <div className="right-section">
-              <div className="icons">
-                <a
-                  href={restData.acf.project_github_link.url}
-                  aria-label={restData.acf.project_github_link.title}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub />
-                </a>
-                <a
-                  href={restData.acf.project_live_link.url}
-                  aria-label={restData.acf.project_live_link.title}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaExternalLinkAlt />
-                </a>
-              </div>
+              {restData.acf.project_github_link.url ||
+              restData.acf.project_live_link.url ? (
+                <div className="icons">
+                  <a
+                    href={restData.acf.project_github_link.url}
+                    aria-label={restData.acf.project_github_link.title}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    href={restData.acf.project_live_link.url}
+                    aria-label={restData.acf.project_live_link.title}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaExternalLinkAlt />
+                  </a>
+                </div>
+              ) : (
+                <div className="coming-soon">
+                  <p>Coming Soon</p>
+                </div>
+              )}
               <section className="overview">
                 <h2 className="project-section-heading">Project Overview</h2>
                 <p className="section-content">

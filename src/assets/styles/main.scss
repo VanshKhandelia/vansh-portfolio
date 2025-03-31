@@ -1,5 +1,9 @@
 @import 'abstracts/variables';
 
+html {
+    scroll-behavior: smooth;
+}
+
 p,
 a,
 li {
@@ -18,7 +22,7 @@ main {
     width: 100vw;
 
     @media (min-width: $media-query-desktop) {
-        margin-left: 5rem;
+        margin-right: 5rem;
         max-width: calc(100vw - 6rem);
         overflow-x: hidden;
     }

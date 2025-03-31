@@ -2,6 +2,7 @@ import React from "react";
 import "../assets/styles/components/_skills.scss";
 import { useState, useEffect } from "react";
 import { restBase } from "../utilities/Utilities";
+import { FaLongArrowAltDown, FaLongArrowAltRight } from "react-icons/fa";
 
 const Skills = () => {
   const restPathSkills = restBase + "portfolio_skills?per_page=100";
@@ -19,6 +20,8 @@ const Skills = () => {
       if (responseSkills.ok && responseCategories.ok) {
         const dataSkills = await responseSkills.json();
         const dataCategories = await responseCategories.json();
+        dataCategories.sort((a, b) => a.acf.number_order - b.acf.number_order);
+        dataSkills.sort((a, b) => a.acf.priority - b.acf.priority);
         setDataSkills(dataSkills);
         setDataSkillCategories(dataCategories);
         setLoadStatus(true);
@@ -51,11 +54,12 @@ const Skills = () => {
       <h2 className="section-heading">SKILLS</h2>
       <div className="section-content">
         <div className="Buttons">
+          <h3>Filters:</h3>
           <button
             className={activeCategory === "all" ? "active" : ""}
             onClick={() => filterSkills("all")}
           >
-            All
+            <p>All</p>
           </button>
           {restDataSkillCategories.map((category) => (
             <button
@@ -63,7 +67,7 @@ const Skills = () => {
               className={activeCategory === category.id ? "active" : ""}
               onClick={() => filterSkills(category.id)}
             >
-              {category.name}
+              <p>{category.name}</p>
             </button>
           ))}
         </div>

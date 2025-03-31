@@ -7,35 +7,31 @@ import {
   FaWhmcs,
 } from "react-icons/fa";
 import "../assets/styles/components/_nav.scss";
+import { getActiveSection } from "../utilities/scrollHandler.js";
+import { useLocation } from "react-router-dom";
 
 const Navigation = () => {
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation();
+
   useEffect(() => {
-    const sections = document.querySelectorAll(".nav-bar-element");
+    if (location.pathname.startsWith("/project/")) {
+      setActiveSection("project-gallery");
+      return;
+    }
 
     const handleScroll = () => {
-      let maxVisibleHeight = 0;
-      let mostVisibleSection = "home"; // Default
-
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        const visibleHeight =
-          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-
-        if (visibleHeight > maxVisibleHeight) {
-          maxVisibleHeight = visibleHeight;
-          mostVisibleSection = section.id;
-        }
-      });
-
-      setActiveSection(mostVisibleSection);
+      setActiveSection(getActiveSection());
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Call once on mount to highlight the correct section initially
+    setTimeout(() => {
+      handleScroll();
+    }, 200);
 
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
+
   return (
     <nav className="navigation">
       <ul>

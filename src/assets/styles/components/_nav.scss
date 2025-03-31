@@ -64,8 +64,8 @@
     }
 
     @media (min-width: $media-query-desktop) {
-        right: auto;
-        margin-left: 1rem;
+        left: auto;
+        margin-right: 1rem;
         top: 50%;
         transform: translateY(-50%);
         height: fit-content;

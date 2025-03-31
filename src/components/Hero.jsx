@@ -4,6 +4,7 @@ import { restBase } from "../utilities/Utilities";
 import HelloCarousel from "./HelloCarousel";
 import "../assets/styles/components/_hero.scss";
 import { FaArrowDown } from "react-icons/fa";
+import Loading from "../utilities/Loading";
 
 const Hero = () => {
   const restPath = restBase + "pages/7";
@@ -24,17 +25,23 @@ const Hero = () => {
     fetchData();
   }, [restPath]);
   return (
-    <section className="hero nav-bar-element" id="home">
-      <div className="introduction">
-        <HelloCarousel />
-        <h1>{restData.acf?.name}</h1>
-        <p className="designation">{restData.acf?.designation}</p>
-      </div>
-      <a className="call-to-action" href="#project-gallery">
-        <strong>View My Work</strong>
-        <FaArrowDown />
-      </a>
-    </section>
+    <>
+      {isLoaded ? (
+        <section className="hero nav-bar-element" id="home">
+          <div className="introduction">
+            <HelloCarousel />
+            <h1>{restData.acf?.name}</h1>
+            <p className="designation">{restData.acf?.designation}</p>
+          </div>
+          <a className="call-to-action" href="#project-gallery">
+            <strong>View My Work</strong>
+            <FaArrowDown />
+          </a>
+        </section>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 };
 

@@ -1,9 +1,39 @@
 @import '../abstracts/variables';
 
 
+@keyframes moveGradient {
+    0% {
+        background-position: 30% 30%;
+    }
+
+    25% {
+        background-position: 70% 40%;
+    }
+
+    50% {
+        background-position: 50% 70%;
+    }
+
+    75% {
+        background-position: 30% 60%;
+    }
+
+    100% {
+        background-position: 30% 30%;
+    }
+}
+
 .hero {
+
+
+
+    background: radial-gradient(circle at 50% 50%, #273870, $background-color, $background-color, $background-color);
+    background-size: 200% 200%;
+    background-position: 50% 50%;
+    animation: moveGradient 6s infinite ease-in-out;
+
+
     padding: 2rem;
-    background: radial-gradient(circle, #273870, $background-color);
     box-sizing: border-box;
     height: calc(100vh - 6.375rem);
     display: flex;
@@ -48,6 +78,21 @@
         gap: 0.25rem;
         margin: 3rem auto;
         border-radius: 10px;
+
+        svg {
+            display: inline-block;
+            animation: jump 0.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translateY(5px);
+            }
+
+            100% {
+                transform: translateY(-5px);
+            }
+        }
 
         @media (min-width:$media-query-tablet) {
             font-size: 1.5rem;
