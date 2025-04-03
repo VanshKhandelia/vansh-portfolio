@@ -4,6 +4,22 @@ html {
     scroll-behavior: smooth;
 }
 
+footer {
+    margin-bottom: 4rem;
+    text-align: center;
+    background-color: rgba($primary-color, 0.1);
+    padding: 0.5rem;
+
+    p {
+        color: $text-color;
+    }
+
+    @media(min-width: $media-query-desktop) {
+        margin-bottom: 0;
+    }
+
+}
+
 p,
 a,
 li {

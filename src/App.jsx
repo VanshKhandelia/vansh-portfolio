@@ -17,6 +17,10 @@ function App() {
         </Routes>
       </main>
       <Navigation />
+      <footer>
+        <p>© 2025 Vansh Khandelia</p>
+        <p>All rights reserved.</p>
+      </footer>
     </>
   );
 }
