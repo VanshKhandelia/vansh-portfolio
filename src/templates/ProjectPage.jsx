@@ -11,7 +11,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const ProjectPage = () => {
   const { projectID } = useParams();
-  const restPath = restBase + `portfolio_projects/${projectID}?_embed`;
+  const restPath =
+    restBase + `portfolio_projects/${projectID}?_embed&acf_format=standard`;
   const restPath2 = restBase + `portfolio_projects`;
   const [restData, setData] = useState([]);
   const [projects, setProjects] = useState([]);
@@ -94,11 +95,16 @@ const ProjectPage = () => {
                   Skills/Technologies Used
                 </h2>
                 <ul>
-                  {restData._embedded["wp:term"][0].map((skill, index) => (
+                  {restData.acf.project_skills.map((skill, index) => (
+                    <li key={index}>
+                      <strong>{skill.post_title}</strong>
+                    </li>
+                  ))}
+                  {/* {restData._embedded["wp:term"][0].map((skill, index) => (
                     <li key={index}>
                       <strong>{skill.name}</strong>
                     </li>
-                  ))}
+                  ))} */}
                 </ul>
               </section>
             </div>
@@ -109,6 +115,15 @@ const ProjectPage = () => {
               className="section-content highlights"
               dangerouslySetInnerHTML={{
                 __html: restData.acf.project_highlights,
+              }}
+            />
+          </section>
+          <section className="reflection">
+            <h2 className="project-section-heading">Project Reflection</h2>
+            <div
+              className="section-content reflection"
+              dangerouslySetInnerHTML={{
+                __html: restData.acf.project_reflection,
               }}
             />
           </section>

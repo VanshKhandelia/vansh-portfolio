@@ -6,7 +6,8 @@ import "../assets/styles/components/_project-card.scss";
 import { FaArrowRight } from "react-icons/fa";
 
 const ProjectCard = ({ projectId }) => {
-  const restPath = restBase + `portfolio_projects/${projectId}?_embed`;
+  const restPath =
+    restBase + `portfolio_projects/${projectId}?_embed&acf_format=standard`;
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
@@ -38,11 +39,14 @@ const ProjectCard = ({ projectId }) => {
               alt="Project Featured"
             />
             <ul className="skills">
-              {restData._embedded["wp:term"][0]
+              {restData.acf.project_skills.slice(0, 3).map((skill, index) => (
+                <li key={index}>{skill.post_title}</li>
+              ))}
+              {/* {restData._embedded["wp:term"][0]
                 .slice(0, 3)
                 .map((skill, index) => (
                   <li key={index}>{skill.name}</li>
-                ))}
+                ))} */}
             </ul>
           </div>
           <a href={`/project/${projectId}`} className="view-project-button">
