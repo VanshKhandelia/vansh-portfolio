@@ -59,8 +59,8 @@ const ProjectPage = () => {
               </Carousel>
             </section>
             <div className="right-section">
-              {restData.acf.project_github_link.url ||
-              restData.acf.project_live_link.url ? (
+              {restData.acf.project_github_link ||
+              restData.acf.project_live_link ? (
                 <div className="icons">
                   <a
                     href={restData.acf.project_github_link.url}

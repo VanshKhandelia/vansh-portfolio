@@ -29,5 +29,11 @@
             color: $primary-color;
             font-size: 1.5rem;
         }
+
+        a:hover {
+            display: block;
+            color: $accent-color;
+            font-size: 1.5rem;
+        }
     }
 }

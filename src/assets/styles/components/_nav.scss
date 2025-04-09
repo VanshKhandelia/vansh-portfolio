@@ -34,6 +34,14 @@
             }
         }
 
+        li:hover {
+            background-color: $primary-color;
+
+            a {
+                color: $background-color;
+            }
+        }
+
         li {
             display: inline;
             border-radius: 5px;
