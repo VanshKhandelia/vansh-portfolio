@@ -63,16 +63,16 @@ const ProjectPage = () => {
               restData.acf.project_live_link ? (
                 <div className="icons">
                   <a
-                    href={restData.acf.project_github_link.url}
-                    aria-label={restData.acf.project_github_link.title}
+                    href={restData.acf.project_github_link}
+                    aria-label="Project gutHub Link"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <FaGithub />
                   </a>
                   <a
-                    href={restData.acf.project_live_link.url}
-                    aria-label={restData.acf.project_live_link.title}
+                    href={restData.acf.project_live_link}
+                    aria-label="Project Live Link"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
